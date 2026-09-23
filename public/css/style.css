@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.main-wrapper {
+  width: 1000px;
+  background: #fff;
+  padding: 10px;
+}
+
+/* Bố cục 3 cột chính */
+.shop-container {
+  display: grid;
+  grid-template-columns: 190px 1fr 270px;
+  border: 1px solid #ebebeb;
+}
+
+/* Sidebar bên trái */
+.sidebar {
+  border-right: 1px solid #ebebeb;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  gap: 10px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.heart-icon {
+  background-color: #f86f87;
+  color: white;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.header-title {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
+
+.category-list {
+  list-style: none;
+}
+
+.category-list li {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.category-list li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #555;
+  font-size: 13px;
+}
+
+.category-list li.active {
+  background-color: #f78da0;
+}
+
+.category-list li.active a {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Lưới sản phẩm (3 cột x 2 hàng) */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.product-item {
+  position: relative;
+  border-right: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-item:nth-child(3n) {
+  border-right: none; /* Bỏ viền cột cuối */
+}
+
+/* Badge giảm giá */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #f82a36;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 6px;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+.img-box {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.img-box img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.product-title {
+  font-size: 13px;
+  color: #555;
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+
+.price-box {
+  font-size: 13px;
+}
+
+.current-price {
+  color: #3388cc;
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+.old-price {
+  color: #ccc;
+  text-decoration: line-through;
+  font-size: 12px;
+}
+
+/* Banner bên phải */
+.promo-banner {
+  position: relative;
+  border-left: 1px solid #ebebeb;
+  overflow: hidden;
+}
+
+.promo-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.banner-text {
+  position: absolute;
+  bottom: 25px;
+  right: 20px;
+  color: #fff;
+  text-align: right;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.banner-text h3 {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.banner-text p {
+  font-size: 13px;
+}
+
+/* Dải logo thương hiệu */
+.brands-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 15px;
+  border-top: 1px solid #ebebeb;
+  margin-top: 10px;
+}
+
+.brands-row img {
+  max-height: 38px;
+  max-width: 110px;
+  object-fit: contain;
+  opacity: 0.85;
+}

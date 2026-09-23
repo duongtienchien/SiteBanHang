@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mỹ Phẩm - Cửa Hàng Trực Tuyến</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="main-wrapper">
+    <div class="shop-container">
+      
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <span class="heart-icon">❤</span>
+          <span class="header-title">MỸ PHẨM</span>
+        </div>
+        <ul class="category-list">
+          <% categories.forEach(cat => { %>
+            <li class="<%= cat.active ? 'active' : '' %>">
+              <a href="#"><%= cat.name %></a>
+            </li>
+          <% }) %>
+        </ul>
+      </aside>
+
+      <section class="products-grid">
+        <% products.forEach(item => { %>
+          <div class="product-item">
+            <% if (item.badge) { %>
+              <span class="badge"><%= item.badge %></span>
+            <% } %>
+            <div class="img-box">
+              <img src="<%= item.image %>" alt="<%= item.name %>">
+            </div>
+            <h4 class="product-title"><%= item.name %></h4>
+            <div class="price-box">
+              <span class="current-price"><%= item.price %></span>
+              <% if (item.oldPrice) { %>
+                <span class="old-price"><%= item.oldPrice %></span>
+              <% } %>
+            </div>
+          </div>
+        <% }) %>
+      </section>
+
+      <aside class="promo-banner">
+        <img src="/images/tabs_2_slider_img_3.jpg" alt="Cosmetics Nature Products">
+        <div class="banner-text">
+          <h3>Cosmetics</h3>
+          <p>Nature Products</p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="brands-row">
+      <img src="/images/partner_img_1.png" alt="Dubby">
+      <img src="/images/partner_img_2.png" alt="Matt">
+      <img src="/images/partner_img_3.png" alt="Burberry">
+      <img src="/images/partner_img_4.png" alt="Handcrafted">
+      <img src="/images/partner_img_5.png" alt="Jololife">
+      <img src="/images/partner_img_6.png" alt="Adventure">
+    </div>
+  </div>
+</body>
+</html>
